@@ -29,10 +29,24 @@ $(document).ready(function(){
 		return $obj;
 	}
 
+	// remove blanks from array
+	function removeBlanks(array) {
+		var newArray = [];
+		for(var i = 0; i < array.length; i++) {
+			var string = array[i];
+			if(string !== "" && string !== undefined && string.match(/\S+$/)) {
+				newArray.push(string);
+			}
+		}
+
+		return newArray;
+	}
+
 	// remove extra indentation from html source
 	function formatCodeBlock($obj) {
 		var blockString = $obj.html();
 		var strings = blockString.split('\n');
+		strings = removeBlanks(strings);
 
 		var minLength = 0;
 		for(var i = 0; i < strings.length; i++) {
