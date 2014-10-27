@@ -9,17 +9,39 @@
     </head>
     <body>
         <div id="content">
-            <section>
-                <div id="code-example1">
-                    <!-- Code Example 1 -->
-                    <header>
-                        <h1>Code Display Example</h1>
-                    </header>
-                    <p class="code-display-exclude">A code example:</p>
-                </div>
-                <div class="code-display" data-code-id="code-example1" data-language="html">
-                    <p>Example Code unavailable.</p>
-                </div>
+            <section id="code-example1">
+                <header>
+                    <h1>HTML Code Display</h1>
+                </header>
+                <section>
+                    <h2>Overview</h2>
+                    <p>The Code Display script lets you show selections of source HTML in automatically generated <code>code</code> tags.</p>
+                </section>
+                <section>
+                    <h2>Usage</h2>
+                    <p>To start, all HTML code that you want to display should be contained in a parent element with a unique <code>id</code> value.</p>
+                    <p>To create a new Code Display instance, create an element with the class <code>code-display</code>. This element should contain two important attributes:</p>
+                    <ul>
+                        <li><code>data-code-id</code>: value should match the <code>id</code> of the example code
+                        <li><code>data-language</code>: value should be the language name being displayed (i.e., "javascript", "html", etc.)
+                    </ul>
+                    <p>Your code should look similar to this:</p>
+<pre class="code-display-ignore"><code data-language="html"><div id="example">
+    <p>Any example code should go here.</p>
+    <p class="code-display-exclude">This code is excluded by the script.</p>
+</div>
+<!-- Code generated here in pre and code tags -->
+<!-- Child content is removed at runtime -->
+<div class="code-display" data-code-id="example" data-language="html">
+    <p>Example code unavailable.</p>
+</div>
+</code></pre>
+                </section>
+                <section>
+                    <h2>Examples</h2>
+
+
+                </section>
             </section>
         <div>
     </body>
