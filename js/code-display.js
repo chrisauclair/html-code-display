@@ -12,11 +12,11 @@ $(document).ready(function(){
 		var language = ($(this).data('language')) ? $(this).data('language') : '';
 		language = ' data-language="' + language + '"';
 
-		// get codeblock 
+		// get codeblock and skip if none found for id
 		var $codeBlock = $('#' + id);
-
-		// skip if no code block
-		return non-false unless($codeBlock);
+		if($codeBlock.length === 0){
+			return true;
+		}
 
 		// clear content
 		$(this).children().each(function(){
