@@ -6,17 +6,25 @@ $(document).ready(function(){
 
 	// generate code for each example
 	$pageSource.find('.code-display').each(function(){
+		
+		// clear content
+		$(this).children().each(function(){
+			$(this).remove();
+		});
+		$(this).text('');
+
 		// get data
 		var id = $(this).data('code-id');
 		var language = ($(this).data('language')) ? $(this).data('language') : '';
 		language = ' data-language="' + language + '"';
+
 		// get codeblock and remove excluded code
 		var $codeBlock = $('#' + id);
 		$codeBlock = excludeCode($codeBlock);
 		var s = formatCodeBlock($codeBlock);
 
 		// create and append code
-		var $pre = $('<code' + language + '">' + s + '</code>');
+		var $pre = $('<pre><code' + language + '">' + s + '</code></pre>');
 		$(this).append($pre);
 	});
 
