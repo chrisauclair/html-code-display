@@ -426,6 +426,11 @@ th {
   padding: 0;
 }
 
+/* === General Styles === */
+#content {
+    margin: 0 65px;
+}
+
 /**
  * GitHub theme
  *
