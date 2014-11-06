@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="content">
-            <section id="code-example1">
+            <section>
                 <header>
                     <h1>HTML Code Display</h1>
                 </header>
@@ -28,19 +28,47 @@
                     <p>Your code should look similar to this:</p>
 <pre class="code-display-ignore"><code data-language="html"><div id="example">
     <p>Any example code should go here.</p>
-    <p class="code-display-exclude">This code is excluded by the script.</p>
+    <p class="code-display-exclude">This code is excluded by the script and replaced by an ellipsis.</p>
 </div>
 <div class="code-display" data-code-id="example" data-language="html">
     <!-- Code example generated here in pre and code tags -->
     <!-- Any other code, like the fallback in this example, is removed at runtime -->
     <p>Example code unavailable.</p>
 </div>
-</code></pre>
+</code></pre> 
                 </section>
                 <section>
                     <h2>Examples</h2>
-
-
+                    <section>
+                        <h3>Example 1</h3>
+                        <div id="example1">
+                            <button class="button-large">
+                               Button 1
+                            </button>
+                            <button class="button-medium">
+                               Button 2
+                            </button>
+                            <button class="button-small">
+                               Button 3
+                            </button>
+                        </div>
+                        <div class="code-display" data-code-id="example1" data-language="html">
+                            <p>Example code unavailable.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Example 2</h3>
+                        <div id="example2">
+                            <ul id="example-list">
+                                <li class="item">Item 1</li>
+                                <li class="code-display-exclude">Item 2</li>
+                                <li class="item">Item 3</li>
+                            </ul>
+                        </div>
+                        <div class="code-display" data-code-id="example2" data-language="html">
+                            <p>Example code unavailable.</p>
+                        </div>
+                    </section>
                 </section>
             </section>
         <div>

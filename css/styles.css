@@ -431,6 +431,18 @@ th {
     margin: 0 65px;
 }
 
+.button-large, .button-medium, .button-small {
+    vertical-align: top;
+}
+
+.button-large {
+    height: 50px;
+}
+
+.button-medium {
+    height: 33px;
+}
+
 /**
  * GitHub theme
  *
