@@ -6,6 +6,11 @@ $(document).ready(function(){
 
 	// generate code for each example
 	$pageSource.find('.code-display').each(function(){
+		// ignore if parent has ignore class
+		var $ignore = $(this).closest('.code-display-ignore');
+		if($ignore.length !== 0) {
+			return true;
+		}
 
 		// get data
 		var id = $(this).data('code-id');
