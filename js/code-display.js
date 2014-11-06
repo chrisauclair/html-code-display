@@ -19,6 +19,7 @@ $(document).ready(function(){
 
 		// get codeblock and skip if none found for id
 		var $codeBlock = $('#' + id);
+		$codeBlock = $codeBlock.clone();
 		if($codeBlock.length === 0){
 			return true;
 		}
@@ -41,7 +42,7 @@ $(document).ready(function(){
 	// remove code with exclude class
 	function excludeCode($obj) {
 		$obj.find('.code-display-exclude').each(function(){
-			$(this).remove();
+			$(this).replaceWith('  ...');
 		});
 
 		return $obj;
