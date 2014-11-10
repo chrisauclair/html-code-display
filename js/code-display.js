@@ -25,10 +25,7 @@ $(document).ready(function(){
 		}
 
 		// clear content
-		$(this).children().each(function(){
-			$(this).remove();
-		});
-		$(this).text('');
+        $(this).html('');
 
 		// remove excluded code from block
 		$codeBlock = excludeCode($codeBlock);
