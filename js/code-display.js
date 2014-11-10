@@ -28,18 +28,25 @@ $(document).ready(function(){
         $(this).html('');
 
 		// remove excluded code from block
-		$codeBlock = excludeCode($codeBlock);
 		var s = formatCodeBlock($codeBlock);
+		$codeBlock = excludeCode($codeBlock);
 
-		// create and append code
-		var $pre = $('<pre><code' + language + '">' + s + '</code></pre>');
+		// create pre and code elements
+		var $pre = $('<pre></pre>')
+		var $code = $('<code' + language + '></code>');
+		$pre.append($code);
+
+		// encode entities to avoid rendering XHTML namespace declaration
+		$code.text(s).html();
+
+		// append to dom
 		$(this).append($pre);
 	});
 
 	// remove code with exclude class
 	function excludeCode($obj) {
 		$obj.find('.code-display-exclude').each(function(){
-			$(this).replaceWith('  ...');
+			$(this).replaceWith('...');
 		});
 
 		return $obj;
@@ -61,6 +68,7 @@ $(document).ready(function(){
 	// remove extra indentation from html source
 	function formatCodeBlock($obj) {
 		var blockString = $obj.html();
+
 		var strings = blockString.split('\n');
 		strings = removeBlanks(strings);
 
@@ -68,6 +76,8 @@ $(document).ready(function(){
 		for(var i = 0; i < strings.length; i++) {
 			var lineString = strings[i];
 
+			// remove XHTML namespace declaration from string
+			lineString = lineString.replace(' xmlns="http://www.w3.org/1999/xhtml"', '');
 
 			// replace tabs with 4 spaces
 			var lineString = lineString.replace(/\t/g,'    ');
