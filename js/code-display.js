@@ -71,6 +71,10 @@ $(document).ready(function(){
 		for(var i = 0; i < strings.length; i++) {
 			var lineString = strings[i];
 
+
+			// replace tabs with 4 spaces
+			var lineString = lineString.replace(/\t/g,'    ');
+
 			// get length of whitespace
 			var whitespace = lineString.replace(/^(\s*)\S.*$/,/$1/);
 			var length = whitespace.length;		
