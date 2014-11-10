@@ -32,7 +32,7 @@ $(document).ready(function(){
 		$codeBlock = excludeCode($codeBlock);
 
 		// create pre and code elements
-		var $pre = $('<pre></pre>')
+		var $pre = $('<pre></pre>');
 		var $code = $('<code' + language + '></code>');
 		$pre.append($code);
 
@@ -80,7 +80,7 @@ $(document).ready(function(){
 			lineString = lineString.replace(' xmlns="http://www.w3.org/1999/xhtml"', '');
 
 			// replace tabs with 4 spaces
-			var lineString = lineString.replace(/\t/g,'    ');
+			lineString = lineString.replace(/\t/g,'    ');
 
 			// get length of whitespace
 			var whitespace = lineString.replace(/^(\s*)\S.*$/,/$1/);
