@@ -7,7 +7,7 @@ $(document).ready(function(){
 	// generate code for each example
 	$pageSource.find('.code-display').each(function(){
 		// ignore if parent has ignore class
-		var $ignore = $(this).closest('.code-display-ignore');
+		var $ignore = $(this).closest('.code-display-ignore, .cd-ignore');
 		if($ignore.length !== 0) {
 			return true;
 		}
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 	// remove code with exclude class
 	function excludeCode($obj) {
-		$obj.find('.code-display-exclude').each(function(){
+		$obj.find('.code-display-collapse, .cd-collapse').each(function(){
 			$(this).replaceWith('...');
 		});
 
