@@ -90,7 +90,10 @@ $(document).ready(function(){
 
 			// get length of whitespace
 			var whitespace = lineString.replace(/^(\s*)\S.*$/,/$1/);
-			var length = whitespace.length;		
+			var length = whitespace.length;
+
+			// format ellipsis for collapsed code
+			lineString = formatEllipsis(lineString, minLength, length);
 
 			// set minimum length to remove
 			if(minLength === 0 || minLength > length) {
@@ -105,6 +108,14 @@ $(document).ready(function(){
 		blockString = strings.join("\n");
 
 		return blockString;
+	}
+
+	function formatEllipsis(string, prevLength, length) {
+		if(string.match(/\s\.\.\.$/) && prevLength <= length) {
+			string = '    ' + string;
+		}
+
+		return string;
 	}
 
 });
