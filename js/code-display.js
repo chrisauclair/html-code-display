@@ -45,8 +45,14 @@ $(document).ready(function(){
 
 	// remove code with exclude class
 	function excludeCode($obj) {
+		// code collapse
 		$obj.find('.code-display-collapse, .cd-collapse').each(function(){
 			$(this).replaceWith('...');
+		});
+
+		// code ignore
+		$obj.find('.code-display-ignore, .cd-ignore').each(function(){
+			$(this).replaceWith('');
 		});
 
 		return $obj;
