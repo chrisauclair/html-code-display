@@ -28,8 +28,8 @@ $(document).ready(function(){
         $(this).html('');
 
 		// remove excluded code from block
-		var s = formatCodeBlock($codeBlock);
 		$codeBlock = excludeCode($codeBlock);
+		var s = formatCodeBlock($codeBlock);
 
 		// create pre and code elements
 		var $pre = $('<pre></pre>');
