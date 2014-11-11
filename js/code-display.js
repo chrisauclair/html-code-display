@@ -89,7 +89,7 @@ $(document).ready(function(){
 			lineString = lineString.replace(/\t/g,'    ');
 
 			// get length of whitespace
-			var whitespace = lineString.replace(/^(\s*)\S.*$/,/$1/);
+			var whitespace = lineString.replace(/^(\s*)\S.*$/,"$1");
 			var length = whitespace.length;
 
 			// format ellipsis for collapsed code
@@ -101,7 +101,7 @@ $(document).ready(function(){
 			}
 
 			// remove minimum whitespace from start of string
-			lineString = lineString.substr(minLength - 2);
+			lineString = lineString.substr(minLength);
 			strings[i] = lineString;
 		}
 
