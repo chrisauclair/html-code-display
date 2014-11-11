@@ -63,6 +63,11 @@ $(document).ready(function(){
 		var newArray = [];
 		for(var i = 0; i < array.length; i++) {
 			var string = array[i];
+
+			// remove whitespace from end of string
+			string = string.replace(/^(.*\S)\s*$/,"$1");
+
+			// only keep non-blanks
 			if(string !== "" && string !== undefined && string.match(/\S+$/)) {
 				newArray.push(string);
 			}
